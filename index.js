@@ -18,3 +18,7 @@ console.log(myList.find(6)); // 3
 console.log(myList.find(8)); // null
 myList.pop();
 console.log(myList.toString()); // ( 1 ) -> ( 7 ) -> ( 7 ) 
+myList.insertAt(2, 3);
+console.log(myList.toString()); // ( 1 ) -> ( 7 ) -> ( 7 ) 
+myList.removeAt(1);
+console.log(myList.toString());

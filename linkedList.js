@@ -104,4 +104,34 @@ export default class LinkedList {
     };
     return string;
   };
+
+  // Extra Credit Section
+  insertAt(value, index) {
+    if (this.listhead == null) this.prepend(value);
+    let current = this.listhead;
+    let previous = null;
+    for (let i = 0; i < index; i++) {
+      previous = current;
+      current = current.next;
+      if (current == null) break;
+    };
+    const temp = new Node(value);
+    previous.next = temp;
+    temp.next = current;
+  };
+
+  removeAt(index) {
+    if (this.listhead == null) return;
+    if (this.listhead.next == null) this.pop();
+    else {
+      let current = this.listhead;
+      let previous = null;
+      for (let i = 0; i < index; i++) {
+        previous = current;
+        current = current.next;
+        if (current == null) break;
+      };
+      previous.next = current.next;
+    }
+  }
 }
